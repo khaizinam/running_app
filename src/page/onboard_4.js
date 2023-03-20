@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: windowWidth - 50 + 'px',
     left: '25px',
-    top: '10px'
+    top: '80px'
   }
   ,headerTitle:{
     position: 'absolute',
