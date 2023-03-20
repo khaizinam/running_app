@@ -10,7 +10,7 @@ import icon_2 from '../img/rect_no_active.png'
 //
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
-export default function Page2() {
+export default function Page3({navigation}) {
     return (
       
     <View style={styles.container}>
@@ -49,10 +49,15 @@ export default function Page2() {
         <img style={styles.backIcon}
           src={backIcon} 
           alt="backIcon" 
+          onClick={() =>
+            navigation.navigate('Onboard-2')
+          }
         />
         <button 
           style={styles.btn_orange}
-          
+          onClick={() =>
+            navigation.navigate('Onboard-4')
+          }
         >NEXT</button>
       </View>
     );

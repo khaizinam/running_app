@@ -4,44 +4,39 @@ import {View, Text, StyleSheet} from 'react-native';
 import {Dimensions} from 'react-native';
 import img1 from '../img/onboard1.png'; 
 import Page2 from './onboard_2'
-import { Router, useNavigate } from 'react-router-dom';
-  
-
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+const Stack = createNativeStackNavigator();
 //
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
-export default function Page1() {
-
-  const navigate = useNavigate()
-
-
+export default function Page1({navigation}) {
     return (
-      <Router>
-        <View style={styles.container}>
-          <Text
-            style={styles.headerTitle}
-          >
-            WELCOME to PacePal 
-          </Text>
-          <Text
-            style={styles.subTitle}
-          >
-            Suggest runners within a 1km radius around you
-          </Text>
-          <img style={styles.banner}
-            src={img1} 
-            alt="banner" 
-          />
-          <StatusBar style="auto" />
-          <button 
-            style={styles.btn_orange}
-            onClick={navigate('/')}
-          >GET START</button>
-        </View>
-        </Router>
+          <View style={styles.container}>
+            <Text
+              style={styles.headerTitle}
+            >
+              WELCOME to PacePal 
+            </Text>
+            <Text
+              style={styles.subTitle}
+            >
+              Suggest runners within a 1km radius around you
+            </Text>
+            <img style={styles.banner}
+              src={img1} 
+              alt="banner" 
+            />
+            <StatusBar style="auto" />
+            <button 
+              onClick={() =>
+                navigation.navigate('Onboard-2')
+              }
+              style={styles.btn_orange}
+            >GET START</button>
+          </View>       
     );
 };
-  
 const styles = StyleSheet.create({
   container: {
       position : 'relative',

@@ -10,7 +10,7 @@ import icon_2 from '../img/rect_no_active.png'
 //
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
-export default function Page2() {
+export default function Page4({navigation}) {
     return (
       
     <View style={styles.container}>

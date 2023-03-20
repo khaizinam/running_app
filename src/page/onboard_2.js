@@ -10,7 +10,7 @@ import icon_2 from '../img/rect_no_active.png'
 //
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
-export default function Page2() {
+export default function Page2({navigation}) {
     return (
       
     <View style={styles.container}>
@@ -47,12 +47,17 @@ export default function Page2() {
         />
         <StatusBar style="auto" />
         <img style={styles.backIcon}
+          onClick={() =>
+            navigation.navigate('Onboard-1')
+          }
           src={backIcon} 
           alt="backIcon" 
         />
         <button 
           style={styles.btn_orange}
-          
+          onClick={() =>
+            navigation.navigate('Onboard-3')
+          }
         >NEXT</button>
       </View>
     );
