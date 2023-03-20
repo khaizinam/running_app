@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {Dimensions} from 'react-native';
-import img1 from '../img/onboard2.png';
+import img1 from '../img/onboard3.png';
 import backIcon from '../img/Back.png'
 import icon_1 from '../img/rect_avtived.png'
 import icon_2 from '../img/rect_no_active.png'
@@ -17,13 +17,13 @@ export default function Page2() {
         <div style={styles.slide_point}>
           <img 
             style={{position : 'absolute',left:'0px'}}
-            src={icon_1} 
-            alt="icon_1" 
+            src={icon_2} 
+            alt="icon_2" 
           />
           <img 
             style={{position : 'absolute',left:'42%'}}
-            src={icon_2} 
-            alt="icon_2" 
+            src={icon_1} 
+            alt="icon_1" 
           />
           <img 
             style={{position : 'absolute',right:'0%'}}
@@ -34,12 +34,12 @@ export default function Page2() {
         <Text
           style={styles.headerTitle}
         >
-          FIND WALKING BUDDY
+          IMPROVE HEALTHY
         </Text>
         <Text
           style={styles.subTitle}
         >
-          Help you find friends who share the same running goals
+          Running improves your health significantly and effectively
         </Text>
         <img style={styles.banner}
           src={img1} 

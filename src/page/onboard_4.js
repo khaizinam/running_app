@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {Dimensions} from 'react-native';
-import img1 from '../img/onboard2.png';
+import img1 from '../img/onboard4.png';
 import backIcon from '../img/Back.png'
 import icon_1 from '../img/rect_avtived.png'
 import icon_2 from '../img/rect_no_active.png'
@@ -17,8 +17,8 @@ export default function Page2() {
         <div style={styles.slide_point}>
           <img 
             style={{position : 'absolute',left:'0px'}}
-            src={icon_1} 
-            alt="icon_1" 
+            src={icon_2} 
+            alt="icon_2" 
           />
           <img 
             style={{position : 'absolute',left:'42%'}}
@@ -27,33 +27,33 @@ export default function Page2() {
           />
           <img 
             style={{position : 'absolute',right:'0%'}}
-            src={icon_2} 
-            alt="icon_2" 
+            src={icon_1} 
+            alt="icon_1" 
           />
         </div>
         <Text
           style={styles.headerTitle}
         >
-          FIND WALKING BUDDY
+          CREATE A HEALTHY COMMUNITY
         </Text>
         <Text
           style={styles.subTitle}
         >
-          Help you find friends who share the same running goals
+          Make the community more active and healthy
         </Text>
         <img style={styles.banner}
           src={img1} 
           alt="banner" 
         />
         <StatusBar style="auto" />
-        <img style={styles.backIcon}
-          src={backIcon} 
-          alt="backIcon" 
-        />
         <button 
           style={styles.btn_orange}
           
-        >NEXT</button>
+        >Log in</button>
+        <button 
+          style={styles.btn_white}
+          
+        >Sign up</button>
       </View>
     );
 };
@@ -75,9 +75,24 @@ const styles = StyleSheet.create({
       color : 'white',
       fontSize: '18px',
       fontWeight :'bold',
-      left: windowWidth / 2 - 167/2 + 'px',
+      borderRadius: '6px',
+      left: windowWidth / 2 - 167 - 20  + 'px',
       bottom : '60px'
   },
+  btn_white :{
+    position: 'absolute',
+    width : '167px',
+    height:'58px',
+    border : 'none',
+    backgroundColor : '#FFFFFF',
+    color : '#0B0531',
+    fontSize: '18px',
+    fontWeight :'bold',
+    left: windowWidth / 2 + 20 + 'px',
+    border: '2px solid #0B0531',
+    borderRadius: '6px',
+    bottom : '60px'
+},
   banner:{
     position: 'absolute',
     width: windowWidth - 50 + 'px',

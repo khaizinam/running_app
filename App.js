@@ -1,6 +1,6 @@
-import Page2  from './src/page/onboard_2'
+import Page4 from './src/page/onboard_4'
 function App() {
-  return Page2()
+  return Page4()
 }
 export default App
 
