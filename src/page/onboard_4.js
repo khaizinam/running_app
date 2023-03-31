@@ -4,6 +4,7 @@ import {Image,View, Text,StyleSheet,Pressable} from 'react-native';
 import styles from '../component/style';
 
 //
+
 export default function Page4({navigation}) {
     return (
       
