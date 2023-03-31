@@ -1,0 +1,52 @@
+.container {
+    position : 'relative';
+    flex: 1;
+    background-color: '#fff';
+    align-items: 'center';
+    justify-content: 'center';
+}
+.btn_orange {
+    position: 'absolute';
+    width : 212px;
+    height: 74px;
+    border : 'none';
+    background-color : '#F9762D';
+    left: calc(50% - 106px);
+    bottom : 60px;
+    border-radius: 30;
+}
+.textInbutton{
+  color : 'white';
+  font-size: 18;
+  font-weight :'bold';
+  margin-top: 27px;
+  text-align:'center';
+}
+.banner{
+  position: 'absolute';
+  width: calc(100% - 50px);
+  left: 25px;
+  top: 10px;
+}
+.headerTitle{
+  position: 'absolute';
+  width : calc(100% - 50px);
+  /* Heading_Onboarding */
+  font-style: 'normal';
+  font-weight: 800;
+  font-size: 30;
+  text-align: 'center';
+  bottom: 300px;
+  color: "#000000";
+}
+.subTitle{
+  position: 'absolute';
+  width : calc(100% - 140px);
+  font-style: 'normal';
+  font-weight: 700;
+  font-size: 20;
+  text-align: 'center';
+  bottom: 193;
+  color: "#000000";
+}
+
