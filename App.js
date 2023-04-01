@@ -2,10 +2,10 @@
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Page1 from './src/page/onboard_1'
-import Page2 from './src/page/onboard_2'
-import Page3 from './src/page/onboard_3'
-import Page4 from './src/page/onboard_4'
+import Page1 from './src/onboard_1'
+import Page2 from './src/onboard_2'
+import Page3 from './src/onboard_3'
+import Page4 from './src/onboard_4'
 const Stack = createNativeStackNavigator();
 
 function App() {
