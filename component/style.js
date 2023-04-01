@@ -34,20 +34,23 @@ export default StyleSheet.create({
     left: 25,
     top: 10,
   },
+  title_wrap:{
+    position:'absolute',
+    bottom:200,
+    alignItems:'center',
+  },
   headerTitle: {
-    position: "absolute",
     width: windowWidth - 50,
     /* Heading_Onboarding */
     // fontFamily:  'Roboto, Helvetica, sans-serif',
     fontStyle: "normal",
     fontWeight: 800,
     fontSize: 30,
+    marginBottom:20,
     textAlign: "center",
-    bottom: 250,
     color: "#000000",
   },
   subTitle: {
-    position: "absolute",
     width: windowWidth - 140,
     /* Heading_Onboarding */
     // fontFamily: 'Nunito',
@@ -55,7 +58,6 @@ export default StyleSheet.create({
     fontWeight: 700,
     fontSize: 20,
     textAlign: "center",
-    bottom: 193,
     color: "#000000",
   },
   backIcon: {
@@ -63,11 +65,9 @@ export default StyleSheet.create({
     height: 58,
   },
   slide_point: {
-    position: "absolute",
     width: 59,
     height: 9,
-    left: windowWidth / 2 - 59 / 2,
-    bottom: 350,
+    marginBottom:20,
   },
   btn_login: {
     position: "absolute",

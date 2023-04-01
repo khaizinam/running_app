@@ -10,24 +10,24 @@ export default function Page3({ navigation }) {
         style={styles.banner}
         source={require("../assets/img/onboard3.png")}
       />
-      <View style={styles.slide_point}>
-        <Image
-          style={{ position: "absolute", left: 0 }}
-          source={require("../assets/img/rect_no_active.png")}
-        />
-        <Image
-          style={{ position: "absolute", left: "42%" }}
-          source={require("../assets/img/rect_avtived.png")}
-        />
-        <Image
-          style={{ position: "absolute", right: "0%" }}
-          source={require("../assets/img/rect_no_active.png")}
-        />
+      <View style={styles.title_wrap}>
+        <View style={styles.slide_point}>
+          <Image
+            style={{ position: "absolute", left: 0 }}
+            source={require("../assets/img/rect_no_active.png")}
+          />
+          <Image
+            style={{ position: "absolute", left: "42%" }}
+            source={require("../assets/img/rect_avtived.png")}
+          />
+          <Image
+            style={{ position: "absolute", right: "0%" }}
+            source={require("../assets/img/rect_no_active.png")}
+          />
+        </View>
+        <Text style={styles.headerTitle}>IMPROVE HEALTHY</Text>
+        <Text style={styles.subTitle}>Running improves your health significantly and effectively</Text>
       </View>
-      <Text style={styles.headerTitle}>IMPROVE HEALTHY</Text>
-      <Text style={styles.subTitle}>
-        Running improves your health significantly and effectively
-      </Text>
       <StatusBar style="auto" />
       <TouchableOpacity
         style={styles.btn_back}

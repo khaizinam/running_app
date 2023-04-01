@@ -13,26 +13,24 @@ export default function Page4({ navigation }) {
         source={require("../assets/img/onboard4.png")}
       />
 
-      <View style={styles.slide_point}>
-        <Image
-          style={{ position: "absolute", left: 0 }}
-          source={require("../assets/img/rect_no_active.png")}
-        />
-        <Image
-          style={{ position: "absolute", left: "42%" }}
-          source={require("../assets/img/rect_no_active.png")}
-        />
-        <Image
-          style={{ position: "absolute", right: "0%" }}
-          source={require("../assets/img/rect_avtived.png")}
-        />
+      <View style={styles.title_wrap}>
+        <View style={styles.slide_point}>
+          <Image
+            style={{ position: "absolute", left: 0 }}
+            source={require("../assets/img/rect_no_active.png")}
+          />
+          <Image
+            style={{ position: "absolute", left: "42%" }}
+            source={require("../assets/img/rect_no_active.png")}
+          />
+          <Image
+            style={{ position: "absolute", right: "0%" }}
+            source={require("../assets/img/rect_avtived.png")}
+          />
+        </View>
+        <Text style={styles.headerTitle}>CREATE A HEALTHY COMMUNITY</Text>
+        <Text style={styles.subTitle}>Make the community more active and healthy</Text>
       </View>
-
-      <Text style={styles.headerTitle}>CREATE A HEALTHY COMMUNITY</Text>
-
-      <Text style={styles.subTitle}>
-        Make the community more active and healthy
-      </Text>
 
       <StatusBar style="auto" />
 
