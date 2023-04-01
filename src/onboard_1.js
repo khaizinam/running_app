@@ -14,18 +14,22 @@ export default function Page1({ navigation }) {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <Image style={styles.banner} source={require("../assets/img/onboard1.png")} />
+      <View style={styles.banner}>
+        <Image  source={require("./img/onboard1.png")} />
+      </View>
       <View style={styles.title_wrap}>
         <Text style={styles.headerTitle}>WELCOME TO PACEPAL</Text>
         <Text style={styles.subTitle}>Suggest runners within a 1km radius around you</Text>
       </View>
-      <TouchableOpacity
-        activeOpacity={0.5}
-        onPress={() => navigator(navigation)}
-        style={styles.btn_orange}
-      >
-        <Text style={styles.textInbutton}>GET START</Text>
-      </TouchableOpacity>
+      <View style={styles.groups_btn}>
+        <TouchableOpacity
+          activeOpacity={0.5}
+          onPress={() => navigator(navigation)}
+          style={styles.btn_orange}
+        >
+          <Text style={styles.textInbutton}>GET START</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }

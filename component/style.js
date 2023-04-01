@@ -2,47 +2,46 @@ import { Dimensions, StyleSheet } from "react-native";
 //
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
-
+console.log(windowWidth, windowHeight)
 export default StyleSheet.create({
   container: {
-    position: "relative",
-    flex: 1,
+    height:'100%',
+    width:'100%',
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-between",
+    marginLeft:'auto',
+    marginRight:'auto',
+    marginTop:0,
+  },
+  banner: {
+    width: '100%',
+    height: '60%',
+    marginTop:20,
+  },
+  title_wrap:{
+    marginBottom:20,
+    height: '25%',
+    alignItems:'center',
   },
   btn_orange: {
-    position: "absolute",
-    width: 212,
-    height: 74,
+    width: 180,
+    height: 58,
     border: "none",
     backgroundColor: "#F9762D",
-    left: windowWidth / 2 - 212 / 2,
-    bottom: 60,
+    marginBottom: 50,
     borderRadius: 30,
   },
   textInbutton: {
     color: "white",
     fontSize: 18,
     fontWeight: "bold",
-    marginTop: 74 / 2 - 10,
+    marginTop: 58 / 2 - 10,
     textAlign: "center",
   },
-  banner: {
-    position: "absolute",
-    width: windowWidth - 50,
-    left: 25,
-    top: 10,
-  },
-  title_wrap:{
-    position:'absolute',
-    bottom:200,
-    alignItems:'center',
-  },
+  
   headerTitle: {
     width: windowWidth - 50,
-    /* Heading_Onboarding */
-    // fontFamily:  'Roboto, Helvetica, sans-serif',
     fontStyle: "normal",
     fontWeight: 800,
     fontSize: 30,
@@ -52,8 +51,6 @@ export default StyleSheet.create({
   },
   subTitle: {
     width: windowWidth - 140,
-    /* Heading_Onboarding */
-    // fontFamily: 'Nunito',
     fontStyle: "normal",
     fontWeight: 700,
     fontSize: 20,
@@ -74,28 +71,26 @@ export default StyleSheet.create({
     border: "none",
     backgroundColor: "#F9762D",
     borderRadius: 30,
-    position: "absolute",
     width: 167,
     height: 74,
-    left: windowWidth / 2 - 167 - 20,
-    bottom: 60,
   },
   btn_signin: {
-    position: "absolute",
     border: "none",
     backgroundColor: "#F9762D",
     borderRadius: 30,
     position: "absolute",
     width: 167,
     height: 74,
-    left: windowWidth / 2 + 20,
-    bottom: 60,
+  },
+  groups_btn:{
+    // display:'flex',
+    height: '15%',
+    flexDirection: 'row',
+    width:'100%',
+    justifyContent:'space-around'
   },
   btn_back: {
-    position: "absolute",
     width: 58,
     height: 58,
-    right: windowWidth / 2 + 58 + 70,
-    bottom: 70,
   },
 });

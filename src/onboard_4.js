@@ -8,24 +8,23 @@ import styles from "../component/style";
 export default function Page4({ navigation }) {
   return (
     <View style={styles.container}>
-      <Image
-        style={styles.banner}
-        source={require("../assets/img/onboard4.png")}
-      />
+      <View style={styles.banner}>
+        <Image  source={require("./img/onboard4.png")}/>
+      </View>
 
       <View style={styles.title_wrap}>
         <View style={styles.slide_point}>
           <Image
             style={{ position: "absolute", left: 0 }}
-            source={require("../assets/img/rect_no_active.png")}
+            source={require("./img/rect_no_active.png")}
           />
           <Image
             style={{ position: "absolute", left: "42%" }}
-            source={require("../assets/img/rect_no_active.png")}
+            source={require("./img/rect_no_active.png")}
           />
           <Image
             style={{ position: "absolute", right: "0%" }}
-            source={require("../assets/img/rect_avtived.png")}
+            source={require("./img/rect_avtived.png")}
           />
         </View>
         <Text style={styles.headerTitle}>CREATE A HEALTHY COMMUNITY</Text>
@@ -34,17 +33,26 @@ export default function Page4({ navigation }) {
 
       <StatusBar style="auto" />
 
-      <TouchableOpacity
-        activeOpacity={0.5}
-        style={styles.btn_login}
-        onPress={() => navigation.navigate("Onboard-1")}
-      >
-        <Text style={styles.textInbutton}>Log in</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity activeOpacity={0.5} style={styles.btn_signin}>
-        <Text style={styles.textInbutton}>Sign in</Text>
-      </TouchableOpacity>
+      <View style={styles.groups_btn}>
+        <View>
+          <TouchableOpacity
+            activeOpacity={0.5}
+            style={styles.btn_orange}
+            onPress={() => navigation.navigate("Onboard-3")}
+          >
+            <Text style={styles.textInbutton}>Sign In</Text>
+          </TouchableOpacity>
+        </View>
+        <View> 
+          <TouchableOpacity
+            activeOpacity={0.5}
+            style={styles.btn_orange}
+            onPress={() => navigation.navigate("Onboard-1")}
+          >
+            <Text style={styles.textInbutton}>Sign Up</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
     </View>
   );
 }
