@@ -39,18 +39,16 @@ export default function App() {
 
   return (
     <View style={styles.container2}>
-
+      
       <View style={styles.box_barcode}>
         <BarCodeScanner
           onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
           style={{height:600,width:600}}
         />
       </View>
-
       <View style={styles.box_result}>
         <Text style={{color:'white',fontSize:25}}>{text}</Text>
       </View>
-
       <View style={styles.box_btn}>
         {scanned && 
         <TouchableOpacity
@@ -62,7 +60,7 @@ export default function App() {
         </TouchableOpacity>
         }
       </View>
-      
+
     </View>
   );
 }
