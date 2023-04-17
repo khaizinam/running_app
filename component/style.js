@@ -93,4 +93,38 @@ export default StyleSheet.create({
     width: 58,
     height: 58,
   },
+  box_barcode:{
+    width:300,
+    height:300,
+    alignItems:'center',
+    borderRadius:30,
+    overflow:'hidden',
+    backgroundColor:'yellow',
+    marginTop:50
+  },
+  box_result:{
+    height:200,  
+    marginTop:20
+  },
+  
+  box_btn:{
+    height:200,
+    marginTop:20
+  },
+  
+  container2:{
+    alignItems:'center',
+    flex:1,
+    backgroundColor:'black',
+
+    justifyContent:'center'
+  },
+  btn_scan_1:{
+    alignItems:"center",
+    justifyContent:'center',
+    width:150,
+    height:80,
+    backgroundColor:"#F9762D",
+    borderRadius:30
+  }
 });

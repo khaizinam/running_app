@@ -38,7 +38,7 @@ export default function Page4({ navigation }) {
           <TouchableOpacity
             activeOpacity={0.5}
             style={styles.btn_orange}
-            onPress={() => navigation.navigate("Onboard-3")}
+            onPress={() => navigation.navigate("login")}
           >
             <Text style={styles.textInbutton}>Sign In</Text>
           </TouchableOpacity>
