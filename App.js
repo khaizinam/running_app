@@ -1,27 +1,27 @@
-import * as React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import BarCodecomponent from './src/BarCodecomponent';
-import Page1 from './src/onboard_1';
-import Page2 from './src/onboard_2';
-import Page3 from './src/onboard_3';
-import Page4 from './src/onboard_4';
-import login from './src/login'
-const Stack = createNativeStackNavigator ();
+import React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+import FlashMessage from 'react-native-flash-message';
 
-function App() {
+//Screens
+import ChooseLocation from './src/Screens/ChooseLocation';
+import Home from './src/Screens/Home';
+
+
+const App = () => {
+  const Stack = createStackNavigator()
+
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="barcode" component={BarCodecomponent} />
-        <Stack.Screen name="Onboard-1" component={Page1} />
-        <Stack.Screen name="Onboard-2" component={Page2} />
-        <Stack.Screen name="Onboard-3" component={Page3} />
-        <Stack.Screen name="Onboard-4" component={Page4} />
-        <Stack.Screen name="login" component={login} />
+      <Stack.Navigator>
+        <Stack.Screen name="home" component={Home} />
+        <Stack.Screen name="chooseLocation" component={ChooseLocation} />
       </Stack.Navigator>
+      <FlashMessage
+        position="top"
+      />
     </NavigationContainer>
   );
-}
+};
 
 export default App;
