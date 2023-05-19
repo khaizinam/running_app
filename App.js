@@ -1,0 +1,23 @@
+import React from 'react';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {NavigationContainer} from '@react-navigation/native';
+//import FlashMessage from 'react-native-flash-message';
+
+//Screens
+import ChooseLocation from './src/Screens/ChooseLocation';
+import Home from './src/Screens/Home';
+const Stack = createNativeStackNavigator ();
+
+const App = () => {
+
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="home" component={Home} />
+        <Stack.Screen name="chooseLocation" component={ChooseLocation} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
+
+export default App;
