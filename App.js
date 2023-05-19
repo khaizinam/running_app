@@ -1,15 +1,14 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
-import FlashMessage from 'react-native-flash-message';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {NavigationContainer} from '@react-navigation/native';
+//import FlashMessage from 'react-native-flash-message';
 
 //Screens
 import ChooseLocation from './src/Screens/ChooseLocation';
 import Home from './src/Screens/Home';
-
+const Stack = createNativeStackNavigator ();
 
 const App = () => {
-  const Stack = createStackNavigator()
 
   return (
     <NavigationContainer>
@@ -17,9 +16,6 @@ const App = () => {
         <Stack.Screen name="home" component={Home} />
         <Stack.Screen name="chooseLocation" component={ChooseLocation} />
       </Stack.Navigator>
-      <FlashMessage
-        position="top"
-      />
     </NavigationContainer>
   );
 };
