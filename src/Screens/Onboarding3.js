@@ -23,7 +23,7 @@ export default Onboarding3 = function ({ navigation }) {
       </Text>
       <View style={styles.bottom}>
       <ImageBackground source={require("../assets/images/bot_on2.jpg")} style={styles.bot_img}>
-        <TouchableOpacity onPress={()=>navigation.navigate("Home")}>
+        <TouchableOpacity onPress={()=>navigation.navigate("Login")}>
         <Image source={require("../assets/images/but_on1.jpg")} style={styles.circle_img}/>
         </TouchableOpacity>
       </ImageBackground>
