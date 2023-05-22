@@ -74,7 +74,7 @@ function Home() {
             <TouchableOpacity
                 style={styles.inputStyle}
             >
-                <Text>Choose your lacation</Text>
+                <Text style={{color:'#ffffff', fontWeight:'600'}}>Choose your lacation</Text>
             </TouchableOpacity>
         </View>
     </View>
@@ -98,7 +98,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: 48,
     justifyContent: 'center',
-    marginTop: 16
+    marginTop: 16,
+    color: '#ffffff',
   }
 })
 export default Home;

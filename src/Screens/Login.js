@@ -34,7 +34,7 @@ export default Login = function ({ navigation }) {
       flag = true;
       return;
     }
-    navigation.navigate("Home");
+    navigation.navigate("AreaSelection");
   }
 
   return (
