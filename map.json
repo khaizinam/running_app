@@ -1,0 +1,120 @@
+{
+    "address_components": [
+        {
+            "long_name": "Tánh Linh District",
+            "short_name": "Tánh Linh District",
+            "types": [Array
+            ]
+        },
+        {
+            "long_name": "Bình Thuận",
+            "short_name": "Bình Thuận",
+            "types": [Array
+            ]
+        },
+        {
+            "long_name": "Vietnam",
+            "short_name": "VN",
+            "types": [Array
+            ]
+        }
+    ],
+    "adr_address": "<span class=\"locality\">Tánh Linh District</span>, <span class=\"region\">Bình Thuận</span>, <span class=\"country-name\">Vietnam</span>",
+    "formatted_address": "Tánh Linh District, Bình Thuận, Vietnam",
+    "geometry": {
+        "location": {
+            "lat": 11.0980639,
+            "lng": 107.678501
+        },
+        "viewport": {
+            "northeast": [Object
+            ],
+            "southwest": [Object
+            ]
+        }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/geocode-71.png",
+    "icon_background_color": "#7B9EB0",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+    "name": "Tánh Linh District",
+    "photos": [
+        {
+            "height": 3000,
+            "html_attributions": [Array
+            ],
+            "photo_reference": "AZose0nD6dXSyRCbpkahVJ8Nh6hAivg2AzGUr60rnmIvPJuZlpE5nvkKUActzSqQNEAr_iDU7fikVPzVRjLfh1Frbu_ri6XmAorGaKyo2-F4qz3vzMbdzksauEHSt_-cgg8zNxiPD_C3OnYRqa4K_DbN3bvnpApsD7tTzqgcrJZvQnSlE44w",
+            "width": 4000
+        },
+        {
+            "height": 3000,
+            "html_attributions": [Array
+            ],
+            "photo_reference": "AZose0kMOlNfTT9cUg-ojXnsgEm4uiNha5o14IYcJZyN5IXjsefFCTKL9AmyzMq8ywLkNPgb_1vcUFyCFejy2x-lXzG1ymp70ETZYJO_2RQfv5mjlAd1IUr7UqwuB9gqjMA-h52hnKdqWcXUs_zjhRz_elKyhuikCtUPA40_FI4uamNHdqDn",
+            "width": 4000
+        },
+        {
+            "height": 3000,
+            "html_attributions": [Array
+            ],
+            "photo_reference": "AZose0mqORyazGUWznDqLso8WtlTagx_wBmx2Dv8sQjDT6ISZdjrFoPYw2DG36P88fsFUlCd3E2ZVg9W6hnXNcbWx9kmupqIJYEsuH8MPFerYFDJqugD9d2CNB-MAqrxygmRE0MnTw7fQHyvaoamLTJLJ0-wz8O6igiNWh0TN7iBAGET3mXI",
+            "width": 4000
+        },
+        {
+            "height": 3456,
+            "html_attributions": [Array
+            ],
+            "photo_reference": "AZose0mJIivUuX21SW6gb8WEGJ0xFLayAqnAV03Y7IT9JdkY_XYy4hCiiI8vycBLWh5C7GdIxgcaXZ0mI5XrwD5vqGhEnYm7FX_0SZYJyY4R8h5CRLrnJogaiXoTDfV0MkhCDEhG_09Fw8QIWs4RHo6RruU9SQlcD3Kc3lS_j5fRH3CCnbk0",
+            "width": 3456
+        },
+        {
+            "height": 1440,
+            "html_attributions": [Array
+            ],
+            "photo_reference": "AZose0mmsUyjyS7jaQtjkRSxxF7BkfdlABaiwpewG9haCBfQy-M8qHn1zkjN5r0-Oh9Hsc8Pnx2QjGO05_1B9qbgU4cz-qquXL7Ty-qJQtE16W4rjKzqXDXe0pJrHlNHBPDdrSAiq1C8_yLdozX4HhXft4clFEzO7__XKt-FZPsGVjEXte31",
+            "width": 1080
+        },
+        {
+            "height": 4032,
+            "html_attributions": [Array
+            ],
+            "photo_reference": "AZose0lVmgLXgyotPOfuoGgDgksJAgFaqRxb58GFKleK0EKj5iI3th_9tI_k3sZHx-f5n-AynF57nGIrFVZR325LAH_I9LvDHI7_NEEpMxY8usHJftgXS0hCD6LZuEJYYV632SeZB-qbFrQgdoFDTZrdQtOupTMHP9P9XvUpshiKFi9US8MW",
+            "width": 3024
+        },
+        {
+            "height": 3096,
+            "html_attributions": [Array
+            ],
+            "photo_reference": "AZose0lT9rxjMUUe2avBTP_s4SXwv0V4vvZUJA20v18NRsaUHdMM1r65G81fmJ29ICQlFALsO_MyLkTPrVZUXZET-dDS84rJFwJO-0qRs8N7LDqMZPDzvRB_e0oMjsyz3EItEdma7ol4ciAR7EywgOEQbq4b3Mk0oB68XXB56UBmXZGia4aC",
+            "width": 4128
+        },
+        {
+            "height": 2304,
+            "html_attributions": [Array
+            ],
+            "photo_reference": "AZose0lj5WESs-cSNC-Kgd8qS0mjrRIXT_JL-Gu9MynfSLPUXgnkqQ-dhL9Tj-jJin6_qm-bUAF6kWvhg4Fo4Pnd6CeAizspWGQpWLsOUjBpm0HbUmyWu4SUUrPjOH9bFEaM343c5eLEHQfJwcuzOcH-d2Qlw8--4xJtCmov7w0OOPfPu1uI",
+            "width": 4096
+        },
+        {
+            "height": 4208,
+            "html_attributions": [Array
+            ],
+            "photo_reference": "AZose0nw3fmSSGLz5GZnyZw_BfhaVnRKpjQIi2Kov9RMZEX5AcSSHPnqpWv1GX1F8mxcqtLG2n4lragk6FNJEmVCcXEbzA2rFq6zJmPv337SxenMasQiiGflweswsgwCezuZxFRZbeXSTSLzeCFjxTLmWkyDmXnl4aYTAYJMkAy4HbgVDuXi",
+            "width": 3120
+        },
+        {
+            "height": 4000,
+            "html_attributions": [Array
+            ],
+            "photo_reference": "AZose0mEqv_RsW9S6oFWm1zjBdha15g_N5VCFbjYMdNMO7ZSVOVL9yaOoRfHa__5hogYBOQhrYtitEgfOdP3RXAtZyYgCdfBIt91fsHlR6dx7UBj3Ip3qnSdMeC65OLX7nB39zHdVQXwnBb18aNvzNVskUGfplNWRRMxExIAHwYAMqDiNoTE",
+            "width": 3000
+        }
+    ],
+    "place_id": "ChIJgR9VAo0_dDERko59K26Lpag",
+    "reference": "ChIJgR9VAo0_dDERko59K26Lpag",
+    "types": [
+        "administrative_area_level_2",
+        "political"
+    ],
+    "url": "https://maps.google.com/?q=T%C3%A1nh+Linh+District,+B%C3%ACnh+Thu%E1%BA%ADn,+Vietnam&ftid=0x31743f8d02551f81:0xa8a58b6e2b7d8e92",
+    "utc_offset": 420
+}
