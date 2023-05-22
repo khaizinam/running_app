@@ -1,71 +1,124 @@
-import React,{ Component, useRef, useState} from 'react';
+import React,{ Component, useRef, useState,useEffect} from 'react';
 import { 
   Image, 
   View, 
   Text, 
   Pressable, 
   TouchableOpacity,
-  StyleSheet } from "react-native";
+  StyleSheet ,Dimensions} from "react-native";
 import {GOOGLE_MAP_KEY} from '../constants/googleMapAPI'
 import MapView,{Marker }from 'react-native-maps';
 import MapViewDirections from 'react-native-maps-directions';
 import imagePath from '../constants/imagePath';
+import * as Location from 'expo-location';
 
-function Home() {
+const screen = Dimensions.get('window');
+const ASPECT_RATIO = screen.width / screen.height;
+const LATITUDE_DELTA = 0.04;
+const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
+
+function Home({navigation}) {
+
+  useEffect(()=>{
+    const res = getLiveLocation();
+    if (res !== false)
+      {
+        console.log("location: ", res)
+        setState({
+        startingCords:{
+          latitude : res.latitude,
+          longitude : res.longitude
+        },
+        destinationCords:{
+          latitude : res.latitude,
+          longitude : res.longitude
+        }
+      })
+    }
+  },[])
+
+  const getLiveLocation = async()=>{
+    const {status} = await Location.requestForegroundPermissionsAsync();
+    if (status !== 'granted'){
+      console.log("please grant location permission");
+      return false;
+    }
+    const location = await Location.getCurrentPositionAsync({});
+    return location.coords
+  }
+
   const [state, setState]= useState({
-    pickupCords:{
-      latitude: 10.762622,
-      longitude: 106.660172,
-      latitudeDelta: 0.0922,
-      longitudeDelta: 0.0421,
+    startingCords:{
+      latitude: 10.882024,
+      longitude: 106.8090804,
     },
-    droplocationCors:{
-      latitude: 10.762700,
-      longitude: 106.685200,
-      latitudeDelta: 0.0922,
-      longitudeDelta: 0.0421,
+    destinationCords:{
+      latitude: 11.882024,
+      longitude: 106.8090804,
     }
   });
-  const mapref = useRef()
-  const {pickupCords,droplocationCors}= state
 
+  const mapref = useRef();
+
+  const {startingCords,destinationCords}= state;
+  
+  const onPressLocation =()=> {
+    navigation.navigate('chooseLocation',{ getCordinates: fetchValues})
+  }
+  const fetchValues = (data)=>{
+    setState({
+      startingCords:{
+        latitude : data.pickupCords.latitude,
+        longitude : data.pickupCords.longitude
+      },
+      destinationCords:{
+        latitude : data.destinationCords.latitude,
+        longitude : data.destinationCords.longitude
+      }
+    })
+    console.log(data)
+  }
   return (
     < View style={{flex:1}}>
         <View style={{flex:1}}>
             <MapView
                 ref={mapref}
                 style={StyleSheet.absoluteFill}
-                initialRegion={pickupCords}
+                initialRegion={{
+                  ...startingCords,
+                  latitudeDelta: LONGITUDE_DELTA,
+                  longitudeDelta: LONGITUDE_DELTA
+                }}
             >
                 <Marker
-                coordinate={pickupCords}
+                coordinate={startingCords}
                 image={imagePath.icCurLoc}
                 />
                 <Marker
-                coordinate={droplocationCors}
+                coordinate={destinationCords}
                 image={imagePath.icGreenMarker}
                 />
                 <MapViewDirections
-                origin={pickupCords}
-                destination={droplocationCors}
-                apikey={GOOGLE_MAP_KEY}
-                strokeWidth={3}
-                strokeColor='hotpink'
-                optimizeWaypoints={true}
-                onReady={ result => {
-                    mapref.current.fitToCoordinates(result.coordinates, {
-                        edgePadding:{
-                            right: 30,
-                            bottom: 150,
-                            left: 30,
-                            top:100
-                        }
-                    })
-                    }
-                }
-                onError={(errorMessage)=>{
-                    //log
-                }}
+                  origin={startingCords}
+                  destination={destinationCords}
+                  apikey={GOOGLE_MAP_KEY}
+                  strokeWidth={3}
+                  strokeColor='hotpink'
+                  optimizeWaypoints={true}
+                  onReady={ result => {
+                      mapref.current.fitToCoordinates(result.coordinates, {
+                          edgePadding:{
+                              right: 30,
+                              bottom: 150,
+                              left: 30,
+                              top:100
+                          }
+                      })
+                      }
+                  }
+                  onError={(errorMessage)=>{
+                      //log
+                  }}
                 />
             </MapView>
         </View>
@@ -73,6 +126,7 @@ function Home() {
             <Text>Where are you going...?</Text>
             <TouchableOpacity
                 style={styles.inputStyle}
+                onPress={onPressLocation}
             >
                 <Text>Choose your lacation</Text>
             </TouchableOpacity>

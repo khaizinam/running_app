@@ -1,8 +1,6 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
-//import FlashMessage from 'react-native-flash-message';
-
 //Screens
 import ChooseLocation from './src/Screens/ChooseLocation';
 import Home from './src/Screens/Home';
