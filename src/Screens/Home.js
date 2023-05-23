@@ -27,15 +27,18 @@ function Home({navigation}) {
       longitude: 106.8090804,
     },
     destinationCords:{},
+    formatted_address:'Where you go?',
     iLoading:false,
     cordinate: new AnimatedRegion({
       latitude: 10.982024,
       longitude: 106.8090804,
       latitudeDelta: LATITUDE_DELTA,
       longitudeDelta: LONGITUDE_DELTA
-    })
+    }),
+    time :0,
+    distance: 0
   });
-  const { curLoc, destinationCords, iLoading, cordinate }= state;
+  const { curLoc, destinationCords, iLoading, cordinate ,formatted_address,time,distance}= state;
   
   // GET LIVE LOCATION
   const getLiveLocation = async()=>{
@@ -86,7 +89,8 @@ function Home({navigation}) {
       destinationCords:{
         latitude : data.destinationCords.latitude,
         longitude : data.destinationCords.longitude
-      }
+      },
+      formatted_address : data.textAddress
     })
   }
 
@@ -105,8 +109,19 @@ function Home({navigation}) {
       longitudeDelta: LONGITUDE_DELTA
     })
   }
+  const fetchTime=(d, t)=>{
+    setState(state=>({
+      ...state,
+      time : t,
+      distance:d
+    }))
+  }
   return (
-    < View style={{flex:1}}>
+    < View style={styles.container}>
+        { distance !==0 && time !== 0 && (<View style={{alignItems:'center',marginVertical:16}}>
+          <Text>Time left : {Math.floor(time)} min</Text>
+          <Text>Distance left : {Math.floor(distance)} km</Text>
+        </View>)}
         <View style={{flex:1}}>
             <MapView ref={mapref} style={StyleSheet.absoluteFill}
                 initialRegion={{
@@ -126,6 +141,7 @@ function Home({navigation}) {
                     strokeColor='hotpink'
                     optimizeWaypoints={true}
                     onReady={ result => {
+                      fetchTime(result.distance, result.duration)
                       mapref.current.fitToCoordinates(result.coordinates, {
                           edgePadding:{
                               // right: 30,
@@ -148,7 +164,7 @@ function Home({navigation}) {
             </TouchableOpacity>
         </View>
         <View style={styles.bottomCard}>
-            <Text>Where are you going...?</Text>
+            <Text>{`Vị trí hiện tại -> ${formatted_address}`}</Text>
             <TouchableOpacity
                 style={styles.inputStyle}
                 onPress={onPressLocation}
@@ -165,18 +181,28 @@ const styles = StyleSheet.create({
   },
   bottomCard:{
     backgroundColor :'white',
+    height:150,
     width:'100%',
     padding:30,
+    justifyContent:'space-between',
     borderTopEndRadius:24,
     borderTopStartRadius:24
   },
   inputStyle:{
-    backgroundColor: 'green',
-    borderRadius: 4,
+    backgroundColor: 'white',
+    borderRadius: 10,
     borderWidth: 1,
     alignItems: 'center',
     height: 48,
     justifyContent: 'center',
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.29,
+    shadowRadius: 4.65,
+    elevation: 7,
     marginTop: 16
   }
 })
