@@ -4,10 +4,10 @@ import {NavigationContainer} from '@react-navigation/native';
 //Screens
 import ChooseLocation from './src/Screens/ChooseLocation';
 import Home from './src/Screens/Home';
-const Stack = createNativeStackNavigator ();
+
 
 const App = () => {
-
+  const Stack = createNativeStackNavigator ();
   return (
     <NavigationContainer>
       <Stack.Navigator>

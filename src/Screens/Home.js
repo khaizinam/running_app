@@ -27,7 +27,7 @@ function Home({navigation}) {
       longitude: 106.8090804,
     },
     destinationCords:{},
-    formatted_address:'Where you go?',
+    formatted_address:'Chọn điểm đến!',
     iLoading:false,
     cordinate: new AnimatedRegion({
       latitude: 10.982024,
@@ -70,7 +70,6 @@ function Home({navigation}) {
     //console.log(location)
   }
   useEffect(()=>{
-    onCenter();
     getLiveLocation();
   },[])
   useEffect(()=>{
@@ -118,10 +117,16 @@ function Home({navigation}) {
   }
   return (
     < View style={styles.container}>
-        { distance !==0 && time !== 0 && (<View style={{alignItems:'center',marginVertical:16}}>
-          <Text>Time left : {Math.floor(time)} min</Text>
-          <Text>Distance left : {Math.floor(distance)} km</Text>
-        </View>)}
+        <TouchableOpacity
+            style={styles.searchBtn}
+            onPress={onPressLocation}
+        >
+            <Text>{formatted_address}</Text>
+        </TouchableOpacity>
+        <View style={styles.topBar}>
+        </View>
+        <View style={styles.topDownBar}>
+        </View>
         <View style={{flex:1}}>
             <MapView ref={mapref} style={StyleSheet.absoluteFill}
                 initialRegion={{
@@ -137,17 +142,13 @@ function Home({navigation}) {
                   <MapViewDirections
                     origin={curLoc} destination={destinationCords}
                     apikey={GOOGLE_MAP_KEY}
-                    strokeWidth={3}
-                    strokeColor='hotpink'
+                    strokeWidth={5}
+                    strokeColor='red'
                     optimizeWaypoints={true}
                     onReady={ result => {
                       fetchTime(result.distance, result.duration)
                       mapref.current.fitToCoordinates(result.coordinates, {
                           edgePadding:{
-                              // right: 30,
-                              // bottom: 150,
-                              // left: 30,
-                              // top:100
                           }
                       })
                       }
@@ -157,20 +158,19 @@ function Home({navigation}) {
                 )}
             </MapView>
             <TouchableOpacity
-              style={{position:'absolute', bottom:0, right: 0}}
+              style={{position:'absolute', top:0, right: 0}}
               onPress={onCenter}
             >
                 <Image source={imagePath.greenIndicator}/>
             </TouchableOpacity>
         </View>
-        <View style={styles.bottomCard}>
-            <Text>{`Vị trí hiện tại -> ${formatted_address}`}</Text>
-            <TouchableOpacity
-                style={styles.inputStyle}
-                onPress={onPressLocation}
-            >
-                <Text>Choose your lacation</Text>
-            </TouchableOpacity>
+        <View style={styles.statusBar}>
+        { distance !==0 && time !== 0 &&(
+          <View style={{alignItems:'center'}}>
+            <Text style={styles.subTitle_1}>{Math.floor(time)} Phút</Text>
+            <Text style={styles.subTitle_2}>{Math.floor(distance)} Km</Text> 
+          </View>
+        )}
         </View>
     </View>
   );
@@ -179,21 +179,28 @@ const styles = StyleSheet.create({
   container:{
     flex:1,
   },
-  bottomCard:{
-    backgroundColor :'white',
-    height:150,
+  topBar:{
+    height:80,
+    backgroundColor :'#1B202D',
     width:'100%',
-    padding:30,
-    justifyContent:'space-between',
-    borderTopEndRadius:24,
-    borderTopStartRadius:24
+    padding:14,
   },
-  inputStyle:{
+  topDownBar:{
+    height:150,
+    backgroundColor :'white',
+    width:'100%',
+  },
+  searchBtn:{
+    position:'absolute',
+    zIndex:10,
+    top:40,
+    left: 15,
     backgroundColor: 'white',
     borderRadius: 10,
     borderWidth: 1,
     alignItems: 'center',
     height: 48,
+    width:screen.width - 30,
     justifyContent: 'center',
     shadowColor: "#000",
     shadowOffset: {
@@ -204,6 +211,19 @@ const styles = StyleSheet.create({
     shadowRadius: 4.65,
     elevation: 7,
     marginTop: 16
+  },
+  statusBar:{
+    height:50,
+    marginVertical: 16,
+  },
+  subTitle_1:{
+    fontSize:20,
+    fontWeight:'bold',
+
+  },
+  subTitle_2:{
+    fontSize:16,
+    color:'#796F6F'
   }
 })
 export default Home;
