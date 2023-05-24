@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import { GooglePlacesAutocomplete,geocodeByPlaceId  } from 'react-native-google-places-autocomplete';
+import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import { GOOGLE_MAP_KEY } from '../constants/googleMapAPI';
 
 const AdressPickup = ({
@@ -8,11 +8,10 @@ const AdressPickup = ({
     fetchAdress
 }) => {
     const onPressAdress=(data, details) => {
-        const textAddress = details.formatted_address ;
-        //console.log(formatted_address)
+        //console.log(details);
         const lat = details.geometry.location.lat;
         const lng = details.geometry.location.lng;
-        fetchAdress(lat, lng, textAddress);
+        fetchAdress(lat, lng);
     }
     return (
         <View style={styles.container}>

@@ -34,11 +34,9 @@ function Home({navigation}) {
       longitude: 106.8090804,
       latitudeDelta: LATITUDE_DELTA,
       longitudeDelta: LONGITUDE_DELTA
-    }),
-    time :0,
-    distance: 0
+    })
   });
-  const { curLoc, destinationCords, iLoading, cordinate ,formatted_address,time,distance}= state;
+  const { curLoc, destinationCords, iLoading, cordinate }= state;
   
   // GET LIVE LOCATION
   const getLiveLocation = async()=>{
@@ -88,8 +86,7 @@ function Home({navigation}) {
       destinationCords:{
         latitude : data.destinationCords.latitude,
         longitude : data.destinationCords.longitude
-      },
-      formatted_address : data.textAddress
+      }
     })
   }
 
@@ -107,13 +104,6 @@ function Home({navigation}) {
       latitudeDelta: LATITUDE_DELTA,
       longitudeDelta: LONGITUDE_DELTA
     })
-  }
-  const fetchTime=(d, t)=>{
-    setState(state=>({
-      ...state,
-      time : t,
-      distance:d
-    }))
   }
   return (
     < View style={styles.container}>
@@ -146,7 +136,6 @@ function Home({navigation}) {
                     strokeColor='red'
                     optimizeWaypoints={true}
                     onReady={ result => {
-                      fetchTime(result.distance, result.duration)
                       mapref.current.fitToCoordinates(result.coordinates, {
                           edgePadding:{
                           }
@@ -202,14 +191,6 @@ const styles = StyleSheet.create({
     height: 48,
     width:screen.width - 30,
     justifyContent: 'center',
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 3,
-    },
-    shadowOpacity: 0.29,
-    shadowRadius: 4.65,
-    elevation: 7,
     marginTop: 16
   },
   statusBar:{
